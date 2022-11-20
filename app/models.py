@@ -8,10 +8,10 @@ from django.utils import timezone
 class Profile(models.Model):
     #user = models.ForeignKey(User, models.CASCADE)
     user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, blank=True)
-    age = models.IntegerField(max_length=100)
+    age = models.IntegerField()
     location = models.CharField(max_length=100)
     occupation = models.CharField(max_length=100)
-    canister = models.IntegerField(max_length=50)
+    canister = models.IntegerField()
     created = models.DateTimeField(default=timezone.now())
     fragrance_type = models.CharField(max_length=50)
 
